@@ -44,4 +44,17 @@ router.post("/summarize", async (req, res) => {
     }
 });
 
+router.post("/uploadLink", async (req, res) => {
+  const { url } = req.body;
+  try {
+    // download the audio from URL here
+    const audioUrl = await downloadFromURL(url);
+    const transcriptId = await transcribeAudio(audioUrl);
+    res.status(200).json({ transcriptId });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to process URL" });
+  }
+});
+
+
 module.exports = router;
