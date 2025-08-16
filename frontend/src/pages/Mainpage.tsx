@@ -59,7 +59,7 @@ const Mainpage: React.FC = () => {
     <>
       <Header />
       <div className="text-center px-4 py-20 bg-gradient-to-br from-[#19172e] to-[#120026] flex flex-col items-center justify-center min-h-[6vh]" id="home">
-        <p className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#72f3ff] via-[#ff79c6] to-[#a960ee] text-transparent bg-clip-text drop-shadow-[0_2px_32px_rgba(51,255,255,0.8)]">
+        <p className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#72f3ff] via-[#ff79c6] to-[#a960ee] text-transparent bg-clip-text drop-shadow-[0_2px_32px_rgba(51,255,255,0.8)] p-3">
           Transform Podcasts into Insights
         </p>
         <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mb-10">
@@ -86,16 +86,18 @@ const Mainpage: React.FC = () => {
       </div>
 
       <div className="features flex flex-col items-center p-8 bg-[#0f0f23]" id="features">
-        <p className="text-5xl font-extrabold p-[50px] pb-[75px] text-white">
+        <p className="sm:text-5xl font-extrabold sm:p-[50px] pb-[50px] text-white text-2xl">
           Why Choose Podsum?
         </p>
-        <div className="flex justify-around gap-[75px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[75px] pb-[50px]">
           <FeatureCard imageUrl={Rocket} title="Lightning Fast" description="Get comprehensive summaries in under 60 seconds." altText="Lightning Fast" />
           <FeatureCard imageUrl={Creative} title="Smart Insights" description="Key takeaways, quotes, and action items automatically extracted." altText="Smart Insights" />
+        <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center">
           <FeatureCard imageUrl={Microphone} title="Any Platform" description="Works with Spotify, Apple Podcasts, YouTube, and more." altText="Any Platform" />
         </div>
+        </div>
 
-        <div className="upload-audio-links p-[150px] w-full" id="linkInput">
+        <div className="upload-audio-links sm:p-[50px] p-1 w-full" id="linkInput">
           <LinkInputArea onFileUpload={handleSummarizeFile} />
           {/* onLinkSubmit={handleSummarizeLink} */}
           {loading && <p className="text-white mt-4">Processing...</p>}
