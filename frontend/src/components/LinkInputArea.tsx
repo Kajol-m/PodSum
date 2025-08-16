@@ -33,8 +33,8 @@ export default function LinkInputArea({ onFileUpload, onLinkSubmit }: LinkInputA
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-5xl font-extrabold text-white">Try it now</p>
-      <p className="text-base md:text-lg text-white font-medium mb-5 pt-8 pb-5">
+      <p className="sm:text-5xl text-2xl font-extrabold text-white">Try it now</p>
+      <p className="text-base md:text-lg text-xs text-white font-medium mb-2 pt-5 pb-5">
         Upload an audio file or paste any podcast URL
       </p>
 
@@ -59,7 +59,7 @@ export default function LinkInputArea({ onFileUpload, onLinkSubmit }: LinkInputA
               type="text"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://open.spotify.com/episode/...."
+              placeholder="Paste any audio URL"
               className="px-4 py-2 w-full max-w-lg bg-[#23235A] text-white rounded-lg placeholder:text-cyan-300"
             />
             {url.trim() && (
